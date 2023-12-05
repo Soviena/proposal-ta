@@ -2,20 +2,20 @@
 Bagian pendahuluan memuat beberapa substansi sebagai berikut:
 
 \section{Latar Belakang}
-Dalam meningkatnya populasi di indonesia, semakin banyak orang orang yang menantri untuk mendapatkan layanan di bank, restoran, rumah sakit, dan tempat penyedia jasa lainnya. Mengantri merupakan kegiatan yang membosankan dan menguras waktu. Mengantri juga dapat mempengaruhi kualitas layanan dari suatu tempat. Pelanggan yang lama mengantri mempunyai kemungkinan untuk pindah ke kompetitor, atau jika ada urusan lain yang lebih penting maka pelanggan akan keluar dari tempat antrian, meninggalkan antrian nya [9]. Solusi yang ada pada bank, kantor pos, dan rumah sakit saat ini menggunakan ticketting nomor antrian secara manual, dimana antrian yang sedang dilayani ditampilkan di layar pada ruang tunggu. Hal ini kurang efektif karena pelanggan harus berada di ruang tunggu.
+Dalam meningkatnya populasi di indonesia, semakin banyak orang orang yang mengantri untuk mendapatkan layanan di bank, restoran, rumah sakit, dan tempat penyedia jasa lainnya. Mengantri merupakan kegiatan yang membosankan dan menguras waktu. Mengantri juga dapat mempengaruhi kualitas layanan dari suatu tempat. Pelanggan yang lama mengantri mempunyai kemungkinan untuk pindah ke kompetitor, atau jika ada urusan lain yang lebih penting maka pelanggan akan keluar dari tempat antrian, meninggalkan antrian nya [9]. Solusi yang ada pada bank, kantor pos, dan rumah sakit saat ini menggunakan ticketting nomor antrian secara manual, dimana antrian yang sedang dilayani ditampilkan di layar pada ruang tunggu. Hal ini kurang efektif karena pelanggan harus berada di ruang tunggu.
 
-Antria merupakan aplikasi untuk mengatasi masalah antrian tersebut dengan menyediakan fitur untuk melihat estimasi waktu, dan pelanggan dapat melakukan hal lain tanpa mengantri secara langsung ditempat.
+Antria merupakan aplikasi untuk mengatasi masalah antrian tersebut dengan menyediakan fitur untuk melihat estimasi waktu, dan pelanggan dapat melakukan hal lain tanpa mengantri secara langsung ditempat. Dengan menggunakan aplikasi antria, pengguna dapat melihat panjangnya antrian tanpa datang ke lokasi, dapat booking tempat atau antrian, jadi saat pengguna hadir ditempat bisa langsung mendapatkan layanan yang di inginkan.
 
-Pengembangan apikasi antria menggunakan arsitektur monolitik dikarenakan mudah nya untuk dibuat dan dideploy secara cepat untuk di iterasikan. Namun arsitektur monolitik memiliki kelemahan seperti sulitnya untuk di maintenance, scale, dan reliabilitas nya. Oleh karena itu perlu diperhatikan bagaimana scope apikasi kedepannya dan perlunya migrasi ke arsitektur microservice.
+Pengembangan aplikasi antria menggunakan arsitektur monolitik dikarenakan mudah nya untuk dibuat dan dideploy secara cepat untuk di iterasikan. Namun arsitektur monolitik memiliki kelemahan seperti sulitnya untuk di maintenance, scale, dan reliabilitas nya. Oleh karena itu perlu diperhatikan bagaimana scope aplikasi kedepannya dan perlunya migrasi ke arsitektur microservice.
 
-NestJs merupakan framework backend dari nodejs yang menggunakan bahasa typescript, dan bisa digunakan untuk pengembangan arsitektur berbasis microservice dan monolitik. NestJs juga bisa digunakan bersamaan dengan framework PrismaJs untuk mengelola database. PrismaJs merupakan framework ORM, digunakan untuk mempercepat, dan mempermudah pengembangan aplikasi yang database nya memiliki relasi yang komplex dan sulit di maintenance jika menggunakan raw sql.
+NestJs merupakan framework backend dari nodejs yang menggunakan bahasa typescript, dan bisa digunakan untuk pengembangan arsitektur berbasis microservice dan monolitik, jadi jika aplikasi dikembangkan pada arsitektur monolitik dapat dengan mudah di migrasikan ke microservice. NestJs juga bisa digunakan bersamaan dengan framework PrismaJs untuk mengelola database. PrismaJs merupakan framework Object Relational Mapping (ORM), digunakan untuk mempercepat, dan mempermudah pengembangan aplikasi yang database nya memiliki relasi yang komplex dan sulit di maintenance jika menggunakan Structured Query Language (SQL).
 
 \section{Perumusan Masalah}
 Aplikasi antria memerlukan backend developer untuk mengimplementasi-kan fungsi fungsi API dan database management nya. Maka dapat dirumuskan permasalahan sebagai berikut:
 \begin{enumerate}
-  \item Bagaimana merancang dan mengimplementasikan ERD.
+  \item Bagaimana merancang dan mengimplementasikan Entity Relational Diagram (ERD) pada PrismaJs.
   \item Bagaimana merancang RESTful API yang aman dari anti-pattern untuk menjaga sustainability dari aplikasi.
-  \item Bagaimana merancang sistem keamanan aplikasi agar pengguna dapat bertransaksi dengan aman.
+  \item Bagaimana merancang sistem keamanan aplikasi agar pengguna dapat bertransaksi dengan aman terutama pada sisi RESTful API nya.
   \item Bagaimana melakukan unit testing dan integration testing pada framework NestJs.
 \end{enumerate}
 
@@ -23,8 +23,8 @@ Aplikasi antria memerlukan backend developer untuk mengimplementasi-kan fungsi f
 \section{Tujuan}
 Tujuan dari pengerjaan Tugas Akhir ini yaitu:
 \begin{enumerate}
-  \item Merancang dan mengimpllementasikan RESTful API dengan menggunakan NestJs yang menghindari anti-pattern.
   \item Implementasi ERD menggunakan Prisma ORM untuk meningkatkan sustainability.
+  \item Merancang dan mengimplementasikan RESTful API dengan menggunakan NestJs yang menghindari anti-pattern.
   \item Menjamin keamanan data user saat memakai apikasi menggunakan JWT untuk session control dan Adaptive Security untuk RESTful API nya.
   \item Menguji kualitas masing masing fungsi dengan menggunakan Unit testing dan integration testing.
 \end{enumerate}
