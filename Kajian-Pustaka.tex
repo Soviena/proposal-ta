@@ -1,66 +1,29 @@
 \chapter{Kajian Pustaka}
  
 \section{NodeJs}
-Margin yang digunakan adalah batas kiri 1,58 inch (4 cm), sedangkan batas atas, kiri dan bawah adalah 1,18 inch (3 cm). Jenis font yang digunakan adalah Times New Roman. Ukuran font untuk Judul Bab adalah 16 pt, untuk judul sub bab adalah 14 pt, untuk subsub bab, subsubsub bab, dan seterusnya adalah 12 pt. Semua bagian isi proposal TA menggunakan ukuran 12 pt dengan 1 spasi. 
-Proposal TA dibuat dengan bantuan komputer menggunakan pencetak (printer) dengan tinta berwarna hitam. Untuk gambar-gambar berwarna proses pencetakan disesuaikan dengan kebutuhan tingkat kepentingan Tema yang akan dikerjakan. 
+NodeJs adalah runtime javascript yang basis nya dibangun dari V8 Java-script Engine. NodeJs berjalan dalam bentuk \textit{event-driven}, dan menggunakan model non blocking I/O. meskipun menggunakan event-driven untuk menangani request, NodeJs dapat menangani jutaan koneksi dalam bersamaan secara \textit{asynchronous} \cite{shah2017node}.
 
-\subsection{NestJs}
+\section{NestJs}
+NestJs merupakan framework untuk Nodejs yang dikembangkan oleh Kamil Myśliwiec yang bertujuan untuk membuat aplikasi NodeJs yang efektif dan \textit{scalable}. NodeJs mendukung penggunaan bahasa typescript dan javascript. NestJs juga menggabungkan komponen-komponen dari Functional Programming, Object Oriented Programming, dan Functional Reactive Programming \cite{pham2020developing} \cite{NestJS}.
 
-Penulisan proposal TA harus mengikuti kaidah penulisan yang layak seperti 
-\begin{enumerate}
-    \item penggunaan bahasa dan istilah yang baku dengan singkat dan jelas,
-    \item mengikuti kelaziman penulisan pada disiplin keilmuan yang diikuti.
-\end{enumerate}
-Bahasa Indonesia yang digunakan dalam naskah proposal TA harus bahasa Indonesia dengan tingkat keresmian yang tinggi dengan menaati kaidah tata bahasa resmi. Kalimat harus utuh dan lengkap. Pergunakanlah tanda-baca seperlunya dan secukupnya agar dapat dibedakan anak kalimat dari kalimat induknya, kalimat keterangan dari kalimat yang diterangkan, dan sebagainya. 
-Kata ganti orang, terutama kata ganti orang pertama (saya dan kami), tidak digunakan, kecuali dalam kalimat kutipan. Susunlah kalimat sedemikian rupa sehingga kalimat tersebut tidak perlu memakai kata ganti orang. Suatu kata dapat dipisahkan menurut ketentuan tata bahasa. Kata terakhir pada dasar halaman tidak boleh dipotong. Pemisahan kata asing harus mengikuti cara yang ditunjukkan dalam kamus bahasa asing tersebut. Gunakanlah buku Pedoman Umum Ejaan Bahasa Indonesia Yang Disempurnakan, Pedoman Umum Pembentukan Istilah, Kamus Besar Bahasa Indonesia, 
+\section{Object Relational Mapping}
+Object Relational Mapping (ORM) adalah sebuah teknologi yang memeta-kan table database ke dalam objek, biasanya dipakai dalam bahasa yang berbasih Object Oriented Programming. Dengan menggunakan ORM, developer dapat berfokus ke business logic tanpa mengkhawatirkan penggunaan akses database yang rumit \cite{lorenz2017object}. 
+
+\section{PrismaJs}
+Prisma adalah ORM Open Source, biasanya digunakan sebagai alternatif dari menggunakan Structured Query Language (SQL) secara langsung. Prisma Mendukung penggunaan database MySQL, PostgreSQL, SQLite, SQL Server, CockroachDB, dan MongoDB. Prisma digunakan untuk mempermudah pengembangan database yang memiliki relasi yang komplex dan besar, dengan cara memberikan API yang type-safe untuk query database nya dan mengembalikan hasil query dalam bentuk javascript Object Notation (JSON) \cite{Prisma}.
+
+\section{Arsitektur Monolitik}
+Arsitektur Monolitik adalah arsitektur sebuah software dimana beberapa fungsi komponen yang berbeda seperti fungsi otorisasi, business logic, notifikasi, pembayaran. Berada dalam satu program dan platform yang sama \cite{gos2020comparison}. 
 
 
-\subsection{PrismaJs}
-Menurut paper Kentang \cite{Kentang}, prsamaan SWE adalah
-Berikut diberikan persamaan pengatur dari persamaan gelombang pada gitar
+\section{JSON Web Token}
+JSON Web Token (JWT) adalah sebuah token berbentuk string json yang dapat digunakan untuk melakukan otorisasi. Ukuran JWT tergolong kecil jadi dapat dengan cepat di transfer antar client dan server. JWT menggunakan algoritma HMAC atau RSA untuk meng-enkripsi digital signature yang digunakan. JWT memiliki 3 bagian pada string nya yang dipisahkan menggunakan ".", bagian ini berupa \textit{header}, \textit{payload}, dan \textit{signature} \cite{rahmatullo2019stateless}.
 
-\begin{equation}\label{Pers1}
-    a=b+U^{n+1}_{i+1}
-\end{equation}
-Persamaan (\ref{Pers1}) jadsbahdhavhdvah ajdbajdb
-\begin{equation}\label{nama-rumus}
-    \int_0^1 \frac{f(x)}{g(x)}\ {\rm dx}=\sin x
-\end{equation}
+\section{Anti Pattern}
+Anti Pattern terjadi jika pembuatan nama sebuah objek tidak konsisten dengan yang lain. Objek disini dapat berupa endpoint API, nama variable, nama fungsi, dan nama lain yang penggunaan nya bersifat publik. Terjadinya anti pattern dapat mengakibatkan sulitnya untuk mengkomprehensi suatu aplikasi \cite{Aghajani2018} \cite{Alshraiedeh2021}.
 
-\begin{equation}\label{nama-rumus1}
-   \alpha \times \beta =\gamma^{3\alpha}
-\end{equation}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.1]{Tel-U-Logo.png}
-    \caption{Caption}
-    \label{fig:my_label1}
-\end{figure} 
-
-Rumus (\ref{nama-rumus}) merupakan \textit{contoh} persamaan matematika. persamaan matematika diatas diberi nama \textbackslash label\{nama-rumus\}. dengan $\alpha=\gamma \times 100$
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.3]{Tel-U-Logo.png}
-    \caption{Caption}
-    \label{fig:my_label}
-\end{figure}
-
-Lihat \textit{pada} Gambar \ref{fig:my_label}
-
-\subsection{Object Relational Mapping}
-Contoh pustaka prosiding \cite{doyen2014explicit}, jurnal \cite{gunawan2015hydrostatic} dan buku \cite{toro2013riemann}. Atau dapat juga mengguanakan dua pustaka atau lebih dalam \cite{gunawan2015hydrostatic,toro2013riemann}.
-
-Daftar pustaka berisikan daftar referensi yang digunakan dalam pembuatan buku TA ini, dimana minimal terdapat 10 referensi yang digunakan dan seluruh referensi yang ada tercatat diacu dalam buku TA. Sedikitnya 3 referensi yang dijadikan sebagai basis mendapatkan gap/peluang penelitian berasal dari publikasi dalam kurun waktu 5 tahun terakhir, dan termasuk dalam jurnal terindeks Scopus/WoS dan/atau SINTA 1 atau 2.
-
-\subsection{Arsitektur Monolitik}
-
-\subsection{JSON Web Token}
-
-\subsection{Anti Pattern}
-
-\subsection{RESTful API}
+\section{RESTful API}
+Representational State Transfer (RESTful) Application Programming Interface (API) adalah arsitektur untuk mempermudah komunikasi client server agar efektif untuk transaksi data, tipe data yang paling sering digunakan untuk transaksi client server adalah JSON. Karakteristik RESTful seperti : 1) Client Server, 2) Stateless, 3) Layered Architecture, 4) Caching, 5) Code on Demand, dan 6) Uniform Interface \cite{giessler2015best}
 
 % Anti Pattern Website
 % https://marcelocure.medium.com/rest-anti-patterns-b128597f5430
