@@ -1,7 +1,7 @@
 \chapter{Pendahuluan}
 
 \section{Latar Belakang}
-Dalam meningkatnya populasi di indonesia, semakin banyak orang orang yang mengantri untuk mendapatkan layanan di bank, restoran, rumah sakit, dan tempat penyedia jasa lainnya. Mengantri merupakan kegiatan yang membosankan dan menguras waktu. Mengantri juga dapat mempengaruhi kualitas layanan dari suatu tempat. Pelanggan yang lama mengantri mempunyai kemungkinan untuk pindah ke kompetitor, atau jika ada urusan lain yang lebih penting maka pelanggan akan keluar dari tempat antrian, meninggalkan antrian nya \cite{khong2017queue}\cite{Ghazal2016}\cite{Uddin2016}. Solusi yang ada pada bank, kantor pos, dan rumah sakit saat ini menggunakan ticketting nomor antrian secara manual, dimana antrian yang sedang dilayani ditampilkan di layar pada ruang tunggu. Hal ini kurang efektif karena pelanggan harus berada di ruang tunggu\cite{Ghazal2016}.
+Dalam meningkatnya populasi di indonesia, semakin banyak orang orang yang mengantri untuk mendapatkan layanan di bank, restoran, rumah sakit, dan tempat penyedia jasa lainnya. Mengantri merupakan kegiatan yang membosankan dan menguras waktu. Mengantri juga dapat mempengaruhi kualitas layanan dari suatu tempat. Pelanggan yang lama mengantri mempunyai kemungkinan untuk pindah ke kompetitor, atau jika ada urusan lain yang lebih penting maka pelanggan akan keluar dari tempat antrian, meninggalkan antrian nya \cite{khong2017queue}\cite{Ghazal2016}\cite{Uddin2016}. Solusi yang ada pada bank, kantor pos, dan rumah sakit saat ini menggunakan \textit{ticketting} nomor antrian secara manual, dimana antrian yang sedang dilayani ditampilkan di layar pada ruang tunggu. Hal ini kurang efektif karena pelanggan harus berada di ruang tunggu\cite{Ghazal2016}.
 
 Dengan adanya perkembangan teknologi dimana penggunaan perangkat pintar atau smartphone merupakan hal lumrah, banyak bermunculan aplikasi antrian virtual seperti Antrique, Qiwee, ExaQue dimana pengguna dapat mengantri dari jarak jauh melalui aplikasi maupun website. Para pengguna aplikasi tersebut juga bisa melakukan hal lain saat mengantri sebelum giliran nya. Namun aplikasi-aplikasi tersebut memiliki banyak kelemahan seperti \textit{UI/UX} yang tidak bagus, sering \textit{crash} dan \textit{freeze}, tidak ada estimasi waktu antrian, dan masih belum ada yang befokus ke sektor \textit{food and beverage}.
 
@@ -11,34 +11,38 @@ Dalam pengembangan aplikasi web, pemilihan bahasa pemrograman untuk digunakan di
 
 NestJs merupakan framework backend dari Nodejs yang menggunakan bahasa typescript, dan bisa digunakan untuk pengembangan arsitektur berbasis microservice dan monolitik, jadi jika aplikasi dikembangkan pada arsitektur monolitik dapat dengan mudah di migrasikan ke microservice. NestJs juga bisa digunakan bersamaan dengan framework PrismaJs untuk mengelola database \cite{NestJS}. PrismaJs merupakan framework Object Relational Mapping (ORM) \cite{Prisma}, digunakan untuk mempercepat, dan mempermudah pengembangan aplikasi yang database nya memiliki relasi yang komplex dan sulit di \textit{maintenance} jika menggunakan Structured Query Language (SQL) \cite{Zmaranda2020}.
 
-Implementasi Application Programming Interface (API) yang digunakan adalah Representational State Transfer (RESTful) API, RESTful API adalah arsitektur untuk mempermudah komunikasi client server agar efektif untuk transaksi data. Namun pada implementasi RESTful API ada beberapa hal yang perlu diperhatikan seperti Keamanan saat transaksi  atau komunikasi \cite{Beer2018}, dan Design pattern dalam penggunaan bahasa untuk endpoint API nya agar tidak terjadi Anti Pattern. Anti Pattern terjadi saat penamaan API tidak sesuai dengan fungsi, atau ada fungsi sejenis tapi penamaan nya berbeda jauh. Dengan menghindari anti pattern dapat berakibat ke aplikasi yang lebih mudah di sustain dan di maintain \cite{Aghajani2018} \cite{Alshraiedeh2021}.
+Implementasi Application Programming Interface (API) yang digunakan adalah Representational State Transfer (RESTful) API, RESTful API adalah arsitektur untuk mempermudah komunikasi client server agar efektif untuk transaksi data. Namun pada implementasi RESTful API ada beberapa hal yang perlu diperhatikan seperti Keamanan saat transaksi  atau komunikasi \cite{Beer2018}. Keamanan yang lemah dapat mengakibatkan hacker dapat dengan mudah melakukan \textit{request tampering}, mengambil data pengguna dan dapat membocorkan data keuangan mitra. Design pattern juga perlu diperhatikan dalam penggunaan bahasa untuk endpoint API nya agar tidak terjadi Anti Pattern. Anti Pattern terjadi saat penamaan API tidak sesuai dengan fungsi, atau ada fungsi sejenis tapi penamaan nya berbeda jauh. Dengan menghindari anti pattern dapat berakibat ke aplikasi yang lebih mudah di sustain dan di maintain \cite{Aghajani2018} \cite{Alshraiedeh2021}.
+
+Setelah fitur-fitur aplikasi dibuat, perlu dilakukan unit testing untuk mem-validasi kodingan yang telah ditulis. Hal ini bertujuan untuk meminimalisir bug dan mencegah terjadi nya regression saat fitur baru ditambahkan \cite{runeson2006survey}.
 
 \section{Perumusan Masalah}
 Aplikasi antria memerlukan backend developer untuk mengimplementasi-kan fungsi fungsi API dan database management nya. Maka dapat dirumuskan permasalahan sebagai berikut:
 \begin{enumerate}
   \item Bagaimana merancang dan mengimplementasikan Entity Relational Diagram (ERD) pada PrismaJs.
-  \item Bagaimana merancang RESTful API yang aman dari anti-pattern untuk menjaga sustainability dari aplikasi.
-  \item Bagaimana merancang sistem keamanan aplikasi agar pengguna dapat bertransaksi dengan aman terutama pada sisi RESTful API nya.
-  \item Bagaimana melakukan unit testing dan integration testing pada framework NestJs.
+  \item Bagaimana merancang API yang bebas dari anti-pattern.
+  \item Bagaimana merancang sistem keamanan pada API untuk melayani request.
 \end{enumerate}
 
 
 \section{Tujuan}
 Tujuan dari pengerjaan Tugas Akhir ini yaitu:
 \begin{enumerate}
-  \item Implementasi ERD menggunakan Prisma ORM untuk meningkatkan sustainability.
-  \item Merancang dan mengimplementasikan RESTful API dengan menggunakan NestJs yang menghindari anti-pattern.
-  \item Menjamin keamanan data user saat memakai apikasi menggunakan JWT untuk session control dan Adaptive Security untuk RESTful API nya.
-  \item Menguji kualitas masing masing fungsi dengan menggunakan Unit testing dan integration testing.
+  \item Mengimplementasikan ERD menggunakan Prisma ORM untuk mening-katkan sustainability dan maintainability.
+  \item Membuat dokumentasi API yang dapat dengan mudah di \textit{sustain} dan di \textit{maintain}.
+  \item Mengamankan data pengguna dengan menambahkan \textit{anti request tampering} pada setiap header request.
+  
+\end{enumerate}
+
+\section{Batasan Masalah}
+\begin{enumerate}
+  \item Hanya berfokus kepada implementasi database menggunakan Prisma ORM.
+  \item Berfokus ke bagaimana membuat endpoint API yang tidak menimbulkan anti pattern.
+  \item Implementasi keamanan pada saat penanganan request menggunakan JSON Web Token (JWT).
 \end{enumerate}
 
 \section{Rencana Kegiatan}
-Rencana kegiatan adalah penjelasan mengenai rencana langkah-langkah yang akan dilakukan dalam pengerjaan Tugas Akhir yang memuat: kajian pustaka, cara pengumpulan data (kualitatif, kuantitatif), rancangan penelitian (mencakup prosedur penelitian dan perancangan sistem), cara menguji hasil penelitian (cara penafsiran dan penyimpulan hasil penelitian).
-
+Rencana kegiatan yang akan dilakukan adalah sebagai berikut : Studi Literatur, Pengumpulan data, Perancangan database dengan Prisma, Implementasi RESTful API pada NestJS, Analisa hasil unit testing, dan Penulisan lapoaran.
 \section{Jadwal Kegiatan}
-
-Jadwal pelaksanaan dibuat berdasarkan metodologi penyelesaian masalah yang digunakan. Bar-chart bisa dibuat per bulan atau per minggu. Dibawah ini adalah merupakan contoh bar-chart:
-
 \begin{table}[h!]
   \centering
     \caption{Jadwal kegiatan proposal tugas akhir}
@@ -53,11 +57,11 @@ Jadwal pelaksanaan dibuat berdasarkan metodologi penyelesaian masalah yang digun
     \hline
     2 & Pengumpulan Data & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & {} & {} & {} & {} & {} & {} & {} & {}& {} & {} & {} & {}& {} & {} & {} & {}& {} & {} & {} & {}\\
     \hline
-    3 & Analisis dan Perancangan Sistem &  {} & {} & {} & {}  & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & {} & {} & {} & {}& {} & {} & {} & {}& {} & {} & {} & {}\\
+    3 & Perancangan database dengan prisma &  {} & {} & {} & {}  & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & {} & {} & {} & {}& {} & {} & {} & {}& {} & {} & {} & {}\\
     \hline
-    4 & Implementasi Sistem &  {} & {} & {} & {} & {} & {} & {} & {}& \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & {} & {} & {} & {}& {} & {} & {} & {}\\
+    4 & Implementasi RESTful API pada NestJS &  {} & {} & {} & {} & {} & {} & {} & {}& \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & {} & {} & {} & {}& {} & {} & {} & {}\\
     \hline
-    5 & Analisa Hasil Implementasi &  {} & {} & {} & {} & {} & {} & {} & {}& {} & {} & {} & {} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & {} & {} & {} & {}\\
+    5 & Analisa hasil unit testing &  {} & {} & {} & {} & {} & {} & {} & {}& {} & {} & {} & {} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & {} & {} & {} & {}\\
     \hline
     6 & Penulisan Laporan & {} & {} & {} & {} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25}& \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25}& \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25}& \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25}& \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25} & \cellcolor{blue!25}\\
     \hline
