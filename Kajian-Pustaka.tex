@@ -1,29 +1,29 @@
 \chapter{Kajian Pustaka}
  
 \section{NodeJs}
-NodeJs adalah runtime javascript yang basis nya dibangun dari V8 Java-script Engine. NodeJs berjalan dalam bentuk \textit{event-driven}, dan menggunakan model non blocking I/O. meskipun menggunakan event-driven untuk melayani request, NodeJs dapat melayani jutaan koneksi dalam bersamaan secara \textit{asynchronous} \cite{shah2017node}.
+NodeJs adalah \textit{runtime} javascript yang basisnya dibangun dari V8 Java-Script Engine. NodeJs berjalan dalam bentuk \textit{event-driven}, dan menggunakan model \textit{non blocking I/O}. meskipun menggunakan \textit{event-driven} untuk melayani \textit{request}, NodeJs dapat melayani jutaan koneksi dalam waktu bersamaan secara \textit{asynchronous} \cite{shah2017node}.
 
 \section{NestJs}
-NestJs merupakan framework untuk Nodejs yang dikembangkan oleh Kamil Myśliwiec yang bertujuan untuk membuat aplikasi NodeJs yang efektif dan \textit{scalable}. NodeJs mendukung penggunaan bahasa typescript dan javascript. NestJs juga menggabungkan komponen-komponen dari Functional Programming, Object Oriented Programming, dan Functional Reactive Programming \cite{pham2020developing} \cite{NestJS}.
+NestJs merupakan \textit{framework} untuk Nodejs yang dikembangkan oleh Kamil Myśliwiec yang bertujuan untuk membuat aplikasi NodeJs yang efektif dan \textit{scalable}. NestJs mendukung penggunaan bahasa typescript dan javascript. NestJs juga menggabungkan komponen-komponen dari Functional Programming, Object Oriented Programming, dan Functional Reactive Programming \cite{pham2020developing} \cite{NestJS}.
 
 \section{Object Relational Mapping}
-Object Relational Mapping (ORM) adalah sebuah teknologi yang memeta-kan table database ke dalam objek, biasanya dipakai dalam bahasa yang berbasis Object Oriented Programming. Dengan menggunakan ORM, developer dapat berfokus ke business logic tanpa mengkhawatirkan penggunaan akses database yang rumit \cite{lorenz2017object}. 
+Object Relational Mapping (ORM) adalah sebuah teknologi yang memeta-kan tabel database ke dalam objek, biasanya dipakai dalam bahasa yang berbasis Object Oriented Programming. Dengan menggunakan ORM, developer dapat berfokus ke \textit{business logic} tanpa mengkhawatirkan penggunaan akses database yang rumit \cite{lorenz2017object}. 
 
 \section{PrismaJs}
-Prisma adalah ORM Open Source, biasanya digunakan sebagai alternatif dari menggunakan Structured Query Language (SQL) secara langsung. Prisma Mendukung penggunaan database MySQL, PostgreSQL, SQLite, SQL Server, CockroachDB, dan MongoDB. Prisma digunakan untuk mempermudah pengembangan database yang memiliki relasi yang komplex dan besar, dengan cara memberikan API yang type-safe untuk query database nya dan mengembalikan hasil query dalam bentuk javascript Object Notation (JSON) \cite{Prisma}.
+PrismaJs adalah ORM Open Source, biasanya digunakan sebagai alternatif dari menggunakan Structured Query Language (SQL) secara langsung. PrismaJs mendukung penggunaan database MySQL, PostgreSQL, SQLite, SQL Server, CockroachDB, dan MongoDB. PrismaJs digunakan untuk mempermudah pengembangan database yang memiliki relasi yang kompleks dan besar, dengan cara memberikan API yang \textit{type-safe} untuk \textit{query} database nya dan mengembalikan hasil \textit{query} dalam bentuk JavaScript Object Notation (JSON) \cite{Prisma}.
 
 \section{Arsitektur Monolitik}
-Arsitektur Monolitik adalah arsitektur sebuah software dimana beberapa fungsi komponen yang berbeda seperti fungsi otorisasi, business logic, notifikasi, pembayaran. Berada dalam satu program dan platform yang sama \cite{gos2020comparison}. 
+Arsitektur Monolitik adalah arsitektur sebuah \textit{software} dimana beberapa fungsi komponen yang berbeda seperti fungsi otorisasi, \textit{business logic}, notifikasi, dan pembayaran. Semua fungsi tersebut berada dalam satu program dan \textit{platform} yang sama. Arsitekru monolitik mudah untuk dikembangkan dan di-\textit{deploy}. Namun, sulit untuk di-\textit{maintenance} dan di-\textit{scale} \cite{gos2020comparison}. 
 
 
 \section{JSON Web Token}
-JSON Web Token (JWT) adalah sebuah token berbentuk string json yang dapat digunakan untuk melakukan otorisasi. Ukuran JWT tergolong kecil jadi dapat dengan cepat di transfer antar client dan server. JWT menggunakan algoritma HMAC atau RSA untuk meng-enkripsi digital signature yang digunakan. JWT memiliki 3 bagian pada string nya yang dipisahkan menggunakan ".", bagian ini berupa \textit{header}, \textit{payload}, dan \textit{signature} \cite{rahmatullo2019stateless}.
+JSON Web Token (JWT) adalah sebuah token berbentuk \textit{string} json yang dapat digunakan untuk melakukan otorisasi. Ukuran JWT tergolong kecil jadi dapat dengan cepat ditransfer antar client dan server. JWT menggunakan algoritma HMAC atau RSA untuk mengenkripsi \textit{digital signature} yang digunakan. JWT memiliki 3 bagian pada \textit{string} nya yang dipisahkan menggunakan ".", bagian ini berupa \textit{header}, \textit{payload}, dan \textit{signature} \cite{rahmatullo2019stateless}.
 
 \section{Anti Pattern}
-Anti Pattern terjadi jika pembuatan nama sebuah objek tidak konsisten dengan yang lain. Objek disini dapat berupa endpoint API, nama variable, nama fungsi, dan nama lain yang penggunaan nya bersifat publik. Terjadinya anti pattern dapat mengakibatkan sulitnya untuk mengkomprehensi suatu aplikasi \cite{Aghajani2018} \cite{Alshraiedeh2021}.
+\textit{Anti Pattern} terjadi jika pembuatan nama sebuah objek tidak konsisten dengan yang lain. Objek disini dapat berupa \textit{endpoint} API, nama \textit{variable}, nama fungsi, dan nama lain yang penggunaannya bersifat publik. Terjadinya \textit{anti pattern} dapat mengakibatkan sulitnya untuk memahami suatu dokumentasi dan kodingan aplikasi \cite{Aghajani2018} \cite{Alshraiedeh2021}.
 
 \section{RESTful API}
-Representational State Transfer (RESTful) Application Programming Interface (API) adalah arsitektur untuk mempermudah komunikasi client server agar efektif untuk transaksi data, tipe data yang paling sering digunakan untuk transaksi client server adalah JSON. Karakteristik RESTful seperti : 1) Client Server, 2) Stateless, 3) Layered Architecture, 4) Caching, 5) Code on Demand, dan 6) Uniform Interface \cite{giessler2015best}.
+Representational State Transfer (RESTful) Application Programming Interface (API) adalah arsitektur untuk mempermudah komunikasi client-server agar efektif untuk transaksi data. Tipe data yang paling sering digunakan untuk transaksi client server adalah JSON. Karakteristik RESTful meliputi : Client-Server, Stateless, Layered Architecture, Caching, Code on Demand, dan Uniform Interface \cite{giessler2015best}.
 
 % Anti Pattern Website
 % https://marcelocure.medium.com/rest-anti-patterns-b128597f5430
